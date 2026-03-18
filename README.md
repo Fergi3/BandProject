@@ -2,6 +2,10 @@
 
 This project is a static promotional website for the band HATEKID. It includes a home page, a news page, and a links page, along with shared styling, media assets, and a small PowerShell script for updating news content.
 
+Watch a demo of the website by clicking the link below. 
+
+https://youtu.be/f1lHrxWXsdg
+
 ## Project Structure
 
 - `index.html` - Landing page with hero media, featured songs, and recent updates.
