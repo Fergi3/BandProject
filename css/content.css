@@ -1,0 +1,491 @@
+/* ======== START: CONTENT SECTION ======== */
+.content {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+/* when applied to a flex container, this will vertically align the items */
+.y-center {
+    align-items: center;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.content > figure {
+    min-height: 300px;
+}
+
+.content > figure > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content > figure > img:has(+figcaption) {
+    height: calc(100% - 1.5em);
+}
+
+.content > figure > figcaption {
+    font-style: italic;
+}
+
+.content p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    /* Adds some space for mobile */
+    [class^="flex-"] {
+        margin-bottom: 1.5em;
+    }
+}
+
+.content > [class^="flex-"] > header {
+    color: var(--dark);
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--dark);
+}
+
+/* Image Container with Songs Below */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.image-container figure {
+    width: min(100%, 960px);
+    margin: 0 auto;
+}
+
+.image-container figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Spotify Songs Section */
+.spotify-songs {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.spotify-songs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--purple);
+    color: var(--light);
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.spotify-songs a.spotify-card {
+    flex-direction: row;
+    width: min(100%, 300px);
+    height: 100px;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.spotify-card .album-art {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+.spotify-card .album-art i {
+    font-size: 2rem;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+}
+
+.spotify-card .song-info {
+    flex: 1;
+    padding: 0.75rem;
+    background-color: var(--purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.spotify-card .song-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--light);
+    line-height: 1.2;
+}
+
+.spotify-card .artist {
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin: 0.25rem 0 0 0;
+}
+
+.spotify-songs a:hover {
+    background-color: var(--accent);
+    color: var(--dark);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+}
+
+.spotify-card:hover .album-art {
+    background: linear-gradient(135deg, var(--accent), var(--red));
+}
+
+.spotify-card:hover .album-art i {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.spotify-card:hover .song-info {
+    background-color: var(--accent);
+}
+
+.spotify-card:hover .song-title,
+.spotify-card:hover .artist {
+    color: var(--dark);
+}
+
+.spotify-songs i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .image-container figure {
+        width: 100%;
+    }
+
+    .spotify-songs {
+        gap: 1rem;
+    }
+
+    .spotify-songs a.spotify-card {
+        width: 100%;
+        max-width: 100%;
+        height: 92px;
+    }
+
+    .spotify-card .album-art {
+        width: 38%;
+        min-width: 110px;
+        height: 100%;
+    }
+
+    .spotify-card .song-info {
+        padding: 0.65rem;
+    }
+
+    .spotify-card .song-title {
+        font-size: 0.8rem;
+    }
+
+    .spotify-card .artist {
+        font-size: 0.68rem;
+    }
+}
+
+/* ======== END: CONTENT SECTION ======== */
+
+/* ======== START: NEWS SECTION ======== */
+.news-article {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid var(--accent);
+}
+
+.news-header h1 {
+    font-size: 2.5rem;
+    color: var(--light);
+    font-family: 'Domine', serif;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.news-card {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(187, 0, 255, 0.1), rgba(0, 255, 65, 0.05));
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.news-card:hover {
+    background: linear-gradient(135deg, rgba(187, 0, 255, 0.15), rgba(0, 255, 65, 0.1));
+    border-color: var(--light);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.news-date {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    background-color: rgba(187, 0, 255, 0.3);
+    border-radius: 4px;
+    white-space: nowrap;
+    height: fit-content;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-content h2 {
+    font-size: 1.5rem;
+    color: var(--light);
+    margin: 0 0 0.5rem 0;
+    font-family: 'Domine', serif;
+}
+
+.news-content p {
+    color: var(--light);
+    line-height: 1.6;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+}
+
+.news-content p strong {
+    color: var(--accent);
+}
+
+.tour-list,
+.festival-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.tour-list li,
+.festival-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    color: var(--light);
+    position: relative;
+    line-height: 1.6;
+}
+
+.tour-list li::before,
+.festival-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .news-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .news-date {
+        writing-mode: horizontal-tb;
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .news-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .news-content h2 {
+        font-size: 1.2rem;
+    }
+}
+/* ======== END: NEWS SECTION ======== */
+
+/* ======== START: LINKS HUB ======== */
+.links-hub {
+    position: relative;
+}
+
+.links-hub-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.kicker {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.links-hub-header h1 {
+    color: var(--light);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.links-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.links-orbit {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+    background:
+        radial-gradient(circle at top left, rgba(0, 255, 65, 0.1), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(0, 217, 255, 0.12), transparent 40%),
+        rgba(10, 10, 10, 0.75);
+    border: 2px solid rgba(0, 255, 65, 0.4);
+    border-radius: 18px;
+    padding: 1.25rem;
+}
+
+.social-node {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--light);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(17, 17, 17, 0.85);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-node .node-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.node-label {
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.node-handle {
+    margin-top: 0.3rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.social-node:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.social-node--ig {
+    grid-column: span 5;
+}
+
+.social-node--yt {
+    grid-column: span 7;
+}
+
+.social-node--sp {
+    grid-column: span 8;
+}
+
+.social-node--tt {
+    grid-column: span 4;
+}
+
+.social-node--x {
+    grid-column: span 12;
+}
+
+.social-node--ig .node-icon {
+    color: #ff6a00;
+}
+
+.social-node--yt .node-icon {
+    color: #ff2d2d;
+}
+
+.social-node--sp .node-icon {
+    color: #1ed760;
+}
+
+.social-node--tt .node-icon {
+    color: #35f6ff;
+}
+
+.social-node--x .node-icon {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .social-node--ig,
+    .social-node--yt,
+    .social-node--sp,
+    .social-node--tt,
+    .social-node--x {
+        grid-column: span 12;
+    }
+}
+/* ======== END: LINKS HUB ======== */
+
